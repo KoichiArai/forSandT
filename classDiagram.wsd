@@ -1,0 +1,18 @@
+@startuml classDiagram
+interface abstractRecruitReader {
+    {abstract} +getThumbnail() : void
+    {abstract} +getShopName() : void
+    {abstract} +getCatchCopy() : void
+    {abstract} +getSalary() : void
+    {abstract} +getHowtoAccess() : void
+    {abstract} +getLinkToApply() : void
+}
+
+class relaxjobRecruitReader {
+    {abstract} +getThumbnail() : str
+    {abstract} +getShopName() : str
+    {abstract} +getCatchCopy() : str
+    {abstract} +getSalary() : str
+    {abstract} +getHowtoAccess() : str
+    {abstract} +getLinkToApply() : str
+}
