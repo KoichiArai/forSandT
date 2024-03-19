@@ -23,23 +23,23 @@ with open("./outputTest.csv", "w", newline='', encoding='shift-jis') as f:
 
             elemShopName = elems[jobCnt].find_element(By.CLASS_NAME, 'sc-bwcZwS')
             print(elemShopName.text)
-            writer.writerow([elemShopName.text])
+            writer.writerow([elemShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemCatchCopy = elems[jobCnt].find_element(By.CLASS_NAME, 'header-text')
             print(elemCatchCopy.text)
-            writer.writerow([elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+            writer.writerow([elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemSalary = elems[jobCnt].find_element(By.TAG_NAME, 'dd')
             if not elems[jobCnt].find_elements(By.CLASS_NAME, 'main-table-list'):
                 elemAccess = elems[jobCnt].find_element(By.CLASS_NAME, 'sc-hUhoqY')
                 print(elemAccess.text)
-                writer.writerow([elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                writer.writerow([elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             else:
                 elemsAccess = elems[jobCnt].find_elements(By.CLASS_NAME, 'main-table-list')
                 for elemAccess in elemsAccess:
                     print(elemAccess.text)
-                    writer.writerow([elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                    writer.writerow([elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemLinktoApply = elems[jobCnt].find_element(By.CLASS_NAME, 'sc-havuDZ').find_element(By.CLASS_NAME, 'apply-button').get_attribute('href')
             print(elemLinktoApply)
@@ -64,15 +64,15 @@ with open("./outputTest.csv", "w", newline='', encoding='shift-jis') as f:
 
             elemShopName = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__brand-name')
             print(elemShopName.text.replace('\u3000',' '))
-            writer.writerow([elemShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+            writer.writerow([elemShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemCatchCopy = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__job-catch')
             print(elemCatchCopy.text)
-            writer.writerow([elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+            writer.writerow([elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemSalary = elems[0].find_element(By.CLASS_NAME, 'job-description-summary__item')
             print(elemSalary.text)
-            writer.writerow([elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+            writer.writerow([elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             if len(elems[jobCnt].find_elements(By.CLASS_NAME, 'job-posting__recruitment-store-link')) == 1:
                 elemAccess = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__recruitment-store-link')
@@ -81,10 +81,10 @@ with open("./outputTest.csv", "w", newline='', encoding='shift-jis') as f:
                 writer.writerow([elemAccessLink])
                 elemAccessShopName = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-name')
                 print(elemAccessShopName.text)
-                writer.writerow([elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                writer.writerow([elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
                 elemAccessRoute = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-access')
                 print(elemAccessRoute.text)
-                writer.writerow([elemAccessRoute.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                writer.writerow([elemAccessRoute.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
             else:
                 elemsAccess = elems[jobCnt].find_elements(By.CLASS_NAME, 'job-posting__recruitment-store-link')
                 for elemAccess in elemsAccess:
@@ -93,10 +93,10 @@ with open("./outputTest.csv", "w", newline='', encoding='shift-jis') as f:
                     writer.writerow([elemAccessLink])
                     elemAccessShopName = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-name')
                     print(elemAccessShopName.text)
-                    writer.writerow([elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                    writer.writerow([elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
                     elemAccessRoute = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-access')
                     print(elemAccessRoute.text)
-                    writer.writerow([elemAccessRoute.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                    writer.writerow([elemAccessRoute.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
             
             elemLinktoApply = elems[jobCnt].find_element(By.CLASS_NAME, 'c-button').get_attribute('href')
             print(elemLinktoApply)
@@ -125,14 +125,14 @@ with open("./outputTest.csv", "w", newline='', encoding='shift-jis') as f:
 
                 elemCatchCopy = elems[incriment].find_element(By.CLASS_NAME, 'history__card-title')
                 print(elemCatchCopy.text)
-                writer.writerow([elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                writer.writerow([elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
                 print(elemSalary.text)
-                writer.writerow([elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                writer.writerow([elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
                 elemAccess = elems[incriment].find_element(By.CLASS_NAME, 'history__card-content').find_element(By.CLASS_NAME, 'history__card-address')
                 print(elemAccess.text)
-                writer.writerow([elemShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.')])
+                writer.writerow([elemShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
                 elemLinktoApply = elems[incriment].find_element(By.CLASS_NAME, 'history__card-content').find_element(By.CLASS_NAME, 'button').get_attribute('href')
                 print(elemLinktoApply)
