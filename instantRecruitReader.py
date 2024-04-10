@@ -33,12 +33,16 @@ with open("./outputTest.csv", "w", newline='', encoding='shift-jis') as f:
             if not elems[jobCnt].find_elements(By.CLASS_NAME, 'main-table-list'):
                 elemAccess = elems[jobCnt].find_element(By.CLASS_NAME, 'sc-hUhoqY')
                 print(elemAccess.text)
+                if elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1') == "":
+                    continue
                 writer.writerow([elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             else:
                 elemsAccess = elems[jobCnt].find_elements(By.CLASS_NAME, 'main-table-list')
                 for elemAccess in elemsAccess:
                     print(elemAccess.text)
+                    if elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1') == "":
+                        continue
                     writer.writerow([elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemLinktoApply = elems[jobCnt].find_element(By.CLASS_NAME, 'sc-havuDZ').find_element(By.CLASS_NAME, 'apply-button').get_attribute('href')
