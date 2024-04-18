@@ -1,3 +1,4 @@
+import config
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -12,16 +13,16 @@ options.add_argument('--headless')
 scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 
 credentials = Credentials.from_service_account_file(
-    R"jobsearchforsandt-d92cda930b99.json",
+    config.jsonname,
     scopes=scopes
 )
 
 gc = gspread.authorize(credentials)
 
-spreadsheet_url = "https://docs.google.com/spreadsheets/d/1RQW1ryYM3FhrKRNVXYChjnIhCjNdw7bYk5GBM-uB1GY/edit#gid=386239817"
+spreadsheet_url = config.spreadSheetUrl
 
 sheet1 = gc.open_by_url(spreadsheet_url).worksheet("ビューティーワークス")
-sheet2 = gc.open_by_key("1RQW1ryYM3FhrKRNVXYChjnIhCjNdw7bYk5GBM-uB1GY").worksheet("リクエストQJ")
+sheet2 = gc.open_by_url(spreadsheet_url).worksheet("リクエストQJ")
 
 
 browser = webdriver.Chrome(options=options)
@@ -33,7 +34,7 @@ rejobList = []
 hotpepperList = []
 requestqjList = []
 for prefCnt in range(1,len(pref)+1):
-        # browser.get("https://relax-job.com/search?business_type=biyoshi&employment=regular-member&feature=new-graduate.student&occupation=assistant_position&pref={}&sort=new".format(prefCnt))
+        # browser.get(.format(prefCnt))
         # elems = browser.find_elements(By.CLASS_NAME, 'sc-kBqmDu')
         # for jobCnt in range(len(elems)):
         #     if jobCnt == 6:
@@ -75,9 +76,9 @@ for prefCnt in range(1,len(pref)+1):
         # ホットペッパービューティーワークス
     # for prefCnt in range(1,len(pref)+1):
     if 1 <= prefCnt <= 9:
-        browser.get("https://work.beauty.hotpepper.jp/search/?prefecture=0{}&occupation=OC01&salary_amount=&employment_pattern=EP1&kodawari_condition=KO02&kodawari_condition=".format(prefCnt))
+        browser.get(config.hpbwUrl1.format(prefCnt))
     else:
-        browser.get("https://work.beauty.hotpepper.jp/search/?prefecture={}&occupation=OC01&salary_amount=&employment_pattern=EP1&kodawari_condition=KO02&kodawari_condition=".format(prefCnt))
+        browser.get(config.hpbwUrl2.format(prefCnt))
     elems = browser.find_elements(By.CLASS_NAME, 'l-card')
     
     for jobCnt in range(len(elems)):
@@ -134,7 +135,7 @@ for prefCnt in range(1,len(pref)+1):
 
     # リクエストQJ
 # for prefCnt in range(1, len(pref)+1):
-    browser.get('https://www.qjnavi.jp/search?pref='+ pref[prefCnt] +'&technical_rank=biyoshi-assistant')
+    browser.get(config.reqjUrl1 + pref[prefCnt] + config.reqjUrl2)
     elems =  browser.find_elements(By.CLASS_NAME, 'history__card-item')
     jobCnt = 0
     incriment = 0
