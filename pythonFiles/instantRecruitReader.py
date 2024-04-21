@@ -13,7 +13,7 @@ options.add_argument('--headless')
 scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
 
 credentials = Credentials.from_service_account_file(
-    config.jsonname,
+    config.jsonName,
     scopes=scopes
 )
 
@@ -25,7 +25,7 @@ sheet1 = gc.open_by_url(spreadsheet_url).worksheet("ビューティーワーク�
 sheet2 = gc.open_by_url(spreadsheet_url).worksheet("リクエストQJ")
 
 
-browser = webdriver.Chrome(options=options)
+browser = webdriver.Chrome(executable_path=config.chromeDriverExecutablePath, options=options)
 # with open("./outputTest.csv", "w", newline='', encoding='shift-jis') as f:
 #     writer = csv.writer(f)
 
