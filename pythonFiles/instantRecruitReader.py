@@ -83,6 +83,7 @@ for prefCnt in range(1,len(pref)+1):
     
     for jobCnt in range(len(elems)):
         if jobCnt == 6:
+            hotpepperList.append([])
             break
         print(jobCnt)
 
@@ -131,7 +132,6 @@ for prefCnt in range(1,len(pref)+1):
         elemLinktoApply = elems[jobCnt].find_element(By.CLASS_NAME, 'c-button').get_attribute('href')
         print(elemLinktoApply)
         hotpepperList.append(["elemLinktoApply", pref[prefCnt], "この求人にアクセス", elemLinktoApply])
-        hotpepperList.append([])
 
     # リクエストQJ
 # for prefCnt in range(1, len(pref)+1):
@@ -171,13 +171,13 @@ for prefCnt in range(1,len(pref)+1):
             print(elemLinktoApply)
             requestqjList.append(["elemLinktoApply", pref[prefCnt], "この求人にアクセス", elemLinktoApply])
 
-            requestqjList.append([])
 
             jobCnt += 1
             incriment += 1
         else:
             incriment += 1
             continue
+    requestqjList.append([])
 
 browser.quit()
 
