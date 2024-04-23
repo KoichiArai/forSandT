@@ -90,26 +90,26 @@ for prefCnt in range(1,len(pref)+1):
 
         elemShopName = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__brand-name')
         print(elemShopName.text.replace('\u3000',' '))
-        hotpepperList.append(["elemShopName", elemShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1'), elemJobDetail])
+        hotpepperList.append(["elemShopName", pref[prefCnt], elemShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1'), elemJobDetail])
         
-        elemThumbnail = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__carousel').find_element(By.TAG_NAME, 'img').get_attribute('data-src')
-        print(elemThumbnail)
-        hotpepperList.append(["elemThumbnail", elemThumbnail])
+        # elemThumbnail = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__carousel').find_element(By.TAG_NAME, 'img').get_attribute('data-src')
+        # print(elemThumbnail)
+        # hotpepperList.append(["elemThumbnail", elemThumbnail])
 
         elemCatchCopy = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__job-catch')
         print(elemCatchCopy.text)
-        hotpepperList.append(["elemCatchCopy", elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
+        hotpepperList.append(["elemCatchCopy", pref[prefCnt], elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
         elemSalary = elems[0].find_element(By.CLASS_NAME, 'job-description-summary__item')
         print(elemSalary.text)
-        hotpepperList.append(["elemSalary", elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1').replace('"', '')])
+        hotpepperList.append(["elemSalary", pref[prefCnt], elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1').replace('"', '')])
 
         if len(elems[jobCnt].find_elements(By.CLASS_NAME, 'job-posting__recruitment-store-link')) == 1:
             elemAccess = elems[jobCnt].find_element(By.CLASS_NAME, 'job-posting__recruitment-store-link')
             elemAccessShopName = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-name')
             elemAccessRoute = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-access')
             print(elemAccessShopName.text)
-            hotpepperList.append(["elemAccess", elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1') \
+            hotpepperList.append(["elemAccess", pref[prefCnt], elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1') \
             + "\n" + elemAccessRoute.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
             print(elemAccessRoute.text)
             # elemAccessLink = elemAccess.get_attribute('href')
@@ -120,7 +120,7 @@ for prefCnt in range(1,len(pref)+1):
             for elemAccess in elemsAccess:
                 elemAccessShopName = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-name')
                 elemAccessRoute = elemAccess.find_element(By.CLASS_NAME, 'job-posting__recruitment-store-access')
-                hotpepperList.append(["elemAccess", elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1') \
+                hotpepperList.append(["elemAccess", pref[prefCnt], elemAccessShopName.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1') \
                                       + "\n" + elemAccessRoute.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
                 print(elemAccessShopName.text)
                 print(elemAccessRoute.text)
@@ -130,7 +130,7 @@ for prefCnt in range(1,len(pref)+1):
         
         elemLinktoApply = elems[jobCnt].find_element(By.CLASS_NAME, 'c-button').get_attribute('href')
         print(elemLinktoApply)
-        hotpepperList.append(["elemLinktoApply", "この求人にアクセス", elemLinktoApply])
+        hotpepperList.append(["elemLinktoApply", pref[prefCnt], "この求人にアクセス", elemLinktoApply])
         hotpepperList.append([])
 
     # リクエストQJ
@@ -150,26 +150,26 @@ for prefCnt in range(1,len(pref)+1):
             elemShopName = elems[incriment].find_element(By.CLASS_NAME, 'history__card-content').find_element(By.CLASS_NAME, 'history__card-subtitle')
             elemJobDetail = elems[incriment].find_element(By.CLASS_NAME, 'history__card-body').find_element(By.TAG_NAME, 'a').get_attribute('href')
             print(elemShopName.text)
-            requestqjList.append(["elemShopName", elemShopName.text, elemJobDetail])
+            requestqjList.append(["elemShopName", pref[prefCnt], elemShopName.text, elemJobDetail])
 
-            elemThumbnail = elems[incriment].find_element(By.TAG_NAME, 'img').get_attribute('src')
-            print(elemThumbnail)
-            requestqjList.append(["elemThumbnail", elemThumbnail])
+            # elemThumbnail = elems[incriment].find_element(By.TAG_NAME, 'img').get_attribute('src')
+            # print(elemThumbnail)
+            # requestqjList.append(["elemThumbnail", elemThumbnail])
 
             elemCatchCopy = elems[incriment].find_element(By.CLASS_NAME, 'history__card-title')
             print(elemCatchCopy.text)
-            requestqjList.append(["elemCatchCopy", elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
+            requestqjList.append(["elemCatchCopy", pref[prefCnt], elemCatchCopy.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             print(elemSalary.text)
-            requestqjList.append(["elemSalary", elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
+            requestqjList.append(["elemSalary", pref[prefCnt], elemSalary.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemAccess = elems[incriment].find_element(By.CLASS_NAME, 'history__card-content').find_element(By.CLASS_NAME, 'history__card-address')
             print(elemAccess.text)
-            requestqjList.append(["elemAccess", elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
+            requestqjList.append(["elemAccess", pref[prefCnt], elemAccess.text.replace('\uff5e', '~').replace('\U0001f538', '◆').replace('\u203c', '!!').replace('\uff0d', '-').replace('\u3000',' ').replace('\u2730', '★').replace('\u273f', '★').replace('\u2116', 'No.').replace('\ufe0e', '').replace('\u2f6c', '目').replace('\u2b50', '★').replace('\u2013', '_').replace('\ufe0f', '').replace('\u2661', '★').replace('\u2160', '1')])
 
             elemLinktoApply = elems[incriment].find_element(By.CLASS_NAME, 'history__card-content').find_element(By.CLASS_NAME, 'button').get_attribute('href')
             print(elemLinktoApply)
-            requestqjList.append(["elemLinktoApply", "この求人にアクセス", elemLinktoApply])
+            requestqjList.append(["elemLinktoApply", pref[prefCnt], "この求人にアクセス", elemLinktoApply])
 
             requestqjList.append([])
 
